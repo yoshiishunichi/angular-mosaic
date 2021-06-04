@@ -11,6 +11,8 @@ export class AppComponent {
   file: File = null
   imgSrc: string | ArrayBuffer = "";
 
+  imgSources: string[] = ["assets/images/sample.png"]
+
   constructor(){}
 
   onChangeFileInput(event: any){
@@ -25,6 +27,8 @@ export class AppComponent {
     this.file = event.target.files[0]
     render.onload = () => {
       this.imgSrc = render.result
+      let strImgSrc = this.imgSrc.toString()
+      this.imgSources.push(strImgSrc)
     }
     render.readAsDataURL(this.file)
   }

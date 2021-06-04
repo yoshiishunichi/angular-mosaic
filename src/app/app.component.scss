@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+input{
+  display: inline-block;
+  vertical-align: top;
+}
+
+img{
+  max-width: 200px;
+  max-height: 200px;
+  display: inline-block;
+}
