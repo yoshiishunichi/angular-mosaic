@@ -13,6 +13,7 @@ export class AppComponent {
 
   imgSources: string[] = ["assets/images/sample.png"]
 
+  isMosaic = false
   constructor(){}
 
   onChangeFileInput(event: any){
@@ -32,8 +33,11 @@ export class AppComponent {
     }
     render.readAsDataURL(this.file)
   }
-
+  mozsaic(){
+    this.isMosaic = true
+  }
   reset(){
     this.imgSources = []
+    this.isMosaic = false
   }
 }
