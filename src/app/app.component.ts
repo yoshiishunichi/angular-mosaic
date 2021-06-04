@@ -34,7 +34,12 @@ export class AppComponent {
     render.readAsDataURL(this.file)
   }
   mozsaic(){
-    this.isMosaic = true
+    if (this.imgSources.length === 0){
+      this.isMosaic = false
+    }
+    else{
+      this.isMosaic = true
+    }
   }
   reset(){
     this.imgSources = []
