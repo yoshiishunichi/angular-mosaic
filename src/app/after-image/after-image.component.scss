@@ -1,5 +1,11 @@
 img{
-  max-width: 200px;
-  max-height: 200px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+canvas{
+  vertical-align: top;
 }
