@@ -1,9 +1,9 @@
 <div class="container">
   <input type="file" accept="image/*" (change)="onChangeFileInput($event)">
-  <button (click)="mozsaic()">モザイク!</button>
-  <button (click)="reset()">リセット</button>
-  <div *ngFor="let src of imgSources">
-    <app-image-to-mosaic [src]="src" *ngIf="src"></app-image-to-mosaic>
-    <app-after-image  [src]="src" *ngIf="isMosaic"></app-after-image>
+  <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
+  <button (click)="reset()" class="reset-btn">リセット</button>
+  <div>
+    <app-image-to-mosaic [src]="imgSrc" *ngIf="imgSrc"></app-image-to-mosaic>
+    <app-after-image  [src]="imgSrc" *ngIf="isMosaic"></app-after-image>
   </div>
 </div>

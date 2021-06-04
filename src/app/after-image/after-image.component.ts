@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-after-image',
@@ -17,7 +17,8 @@ export class AfterImageComponent implements OnInit {
 
   ngOnInit(): void {
     let size = 200
-    let canvas = document.getElementById("canvas") as HTMLCanvasElement
+    let canvas = document.getElementById(`canvas`) as HTMLCanvasElement
+    console.log(canvas)
     let ctx = canvas.getContext("2d")
 
     let mosaicCanvas = document.getElementById("mosaic-canvas") as HTMLCanvasElement
@@ -38,8 +39,10 @@ export class AfterImageComponent implements OnInit {
         mosaicCtx.fillRect(x,y,10,10)
       }
     }
-
-
     this.afterSrc = mosaicCanvas.toDataURL()
+  }
+
+  setMosaic(){
+
   }
 }

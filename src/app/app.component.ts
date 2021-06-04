@@ -11,13 +11,11 @@ export class AppComponent {
   file: File = null
   imgSrc: string | ArrayBuffer = "";
 
-  imgSources: string[] = ["assets/images/sample.png"]
-
   isMosaic = false
   constructor(){}
 
   onChangeFileInput(event: any){
-
+    this.isMosaic = false
     if (event.target.files.length === 0){
       this.file = null;
       this.imgSrc = ""
@@ -28,21 +26,21 @@ export class AppComponent {
     this.file = event.target.files[0]
     render.onload = () => {
       this.imgSrc = render.result
-      let strImgSrc = this.imgSrc.toString()
-      this.imgSources.push(strImgSrc)
     }
     render.readAsDataURL(this.file)
   }
   mozsaic(){
-    if (this.imgSources.length === 0){
-      this.isMosaic = false
-    }
-    else{
+    if (this.imgSrc){
       this.isMosaic = true
     }
+    else{
+      this.isMosaic = false
+    }
+    console.log(this.isMosaic)
   }
   reset(){
-    this.imgSources = []
+    this.imgSrc = ""
     this.isMosaic = false
+    console.log(this.isMosaic)
   }
 }
