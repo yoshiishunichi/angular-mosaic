@@ -1,6 +1,6 @@
 <div class="container">
   <input type="file" accept="image/*" (change)="onChangeFileInput($event)">
-
+  <button (click)="reset()">リセット</button>
   <div *ngFor="let src of imgSources">
     <app-image-to-mosaic [src]="src" *ngIf="src"></app-image-to-mosaic>
   </div>

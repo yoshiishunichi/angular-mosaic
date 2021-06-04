@@ -32,4 +32,8 @@ export class AppComponent {
     }
     render.readAsDataURL(this.file)
   }
+
+  reset(){
+    this.imgSources = []
+  }
 }
