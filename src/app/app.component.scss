@@ -49,17 +49,27 @@ label > input {
 }
 
 button, label{
-  padding: 3px;
+  text-align: center;
+  vertical-align: middle;
   margin-right: 12px;
   color: black;
-  background-color: #eee;
+  background-color:white;
   display: inline-block;
   vertical-align: top;
   font-size: 15px;
   height: 30px;
-  line-height: 24px;
+  line-height: 26px;
   cursor: pointer;
-  border: solid 1px black;
+  border: solid 2px black;
+  border-radius: 6px;
   cursor: pointer;
+}
 
+label{
+  width: 180px;
+}
+
+button:hover, label:hover{
+  background-color: black;
+  color:white;
 }
