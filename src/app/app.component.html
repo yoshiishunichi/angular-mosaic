@@ -5,6 +5,7 @@
   </label>
   <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
   <button (click)="reset()" class="reset-btn">リセット</button>
+  <input type="range" id="input-range" value="100" min="0" max="200" (change)="onChangeSlider()">
   <p class="alert" *ngIf="alert">画像を選んでね！</p>
   <div class="image-container">
     <app-image-to-mosaic [src]="imgSrc" *ngIf="imgSrc"></app-image-to-mosaic>

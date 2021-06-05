@@ -14,6 +14,11 @@ export class AppComponent {
   alert = false
   isMosaic = false
   constructor(){}
+  
+  onChangeSlider(){
+    let slider = document.getElementById("input-range") as HTMLInputElement
+    console.log(slider.value)
+  }
 
   onChangeFileInput(event: any){
     this.isMosaic = false
