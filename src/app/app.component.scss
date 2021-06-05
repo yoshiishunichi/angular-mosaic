@@ -20,7 +20,6 @@ img{
 }
 
 .reset-btn{
-  margin-left: 12px;
   width: 90px;
 }
 
@@ -43,4 +42,24 @@ img{
   line-height: 200px;
   user-select: none;
   vertical-align: top;
+}
+
+label > input {
+  display:none;
+}
+
+button, label{
+  padding: 3px;
+  margin-right: 12px;
+  color: black;
+  background-color: #eee;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+  height: 30px;
+  line-height: 24px;
+  cursor: pointer;
+  border: solid 1px black;
+  cursor: pointer;
+
 }
