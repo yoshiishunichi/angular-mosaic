@@ -24,15 +24,23 @@ img{
   width: 90px;
 }
 
+.alert{
+  font-size: 15px;
+  color: red;
+  font-weight: bold;
+}
+
 .image-container{
   margin-top: 12px;
 }
 
-mat-icon{
-  height: 100%;
+.mat-icon{
+  display: inline-block;
+  height: 200px;
   width: 42px;
   font-size: 30px;
   text-align: center;
-  line-height: 100%;
+  line-height: 200px;
   user-select: none;
+  vertical-align: top;
 }

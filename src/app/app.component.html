@@ -2,6 +2,7 @@
   <input type="file" accept="image/*" (change)="onChangeFileInput($event)">
   <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
   <button (click)="reset()" class="reset-btn">リセット</button>
+  <p class="alert" *ngIf="alert">画像を選んでね！</p>
   <div class="image-container">
     <app-image-to-mosaic [src]="imgSrc" *ngIf="imgSrc"></app-image-to-mosaic>
     <mat-icon *ngIf="imgSrc && isMosaic">arrow_forward</mat-icon>

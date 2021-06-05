@@ -11,6 +11,7 @@ export class AppComponent {
   file: File = null
   imgSrc: string | ArrayBuffer = "";
 
+  alert = false
   isMosaic = false
   constructor(){}
 
@@ -21,7 +22,8 @@ export class AppComponent {
       this.imgSrc = ""
       return;
     }
-
+    
+    this.alert = false
     let render = new FileReader();
     this.file = event.target.files[0]
     render.onload = () => {
@@ -34,12 +36,14 @@ export class AppComponent {
       this.isMosaic = true
     }
     else{
+      this.alert = true
       this.isMosaic = false
     }
     console.log(this.isMosaic)
   }
   reset(){
     this.imgSrc = ""
+    this.alert = false
     this.isMosaic = false
     console.log(this.isMosaic)
   }
