@@ -38,6 +38,7 @@ img{
   vertical-align: top;
 }
 
+
 label > input {
   display:none;
 }
@@ -77,5 +78,26 @@ button:hover, label:hover{
     outline: none;
     height: 14px;
     width: 160px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .mat-icon{
+    width: 100px;
+    line-height: 100px;
+    width: 36px;
+    font-size: 27px;
+  }
+
+  label{
+    width: 90px;
+  }
+
+  .mosaic-btn{
+    width: 72px;
+  }
+  
+  .reset-btn{
+    width: 72px;
   }
 }

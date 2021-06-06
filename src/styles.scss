@@ -6,6 +6,12 @@ p, button, label{
   font-size: 15px;
 }
 
+@media screen and (max-width:600px) {
+  p, button, label{
+    font-size: 12px;
+  }
+}
+
 button,input, label{
   cursor: pointer;
 }
