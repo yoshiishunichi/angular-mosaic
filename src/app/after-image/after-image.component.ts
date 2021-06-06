@@ -45,15 +45,26 @@ export class AfterImageComponent implements OnInit {
       ctx.drawImage(img, 0, (imgHeight-imgWidth)/2, imgWidth, imgWidth, 0, 0, size, size)
     }
 
-    for (let x=0; x<size; x+=this.intensity){
-      for (let y=0; y<size; y+=this.intensity){
-        let imageData = ctx.getImageData(x,y,1,1)
-        let r = imageData.data[0]
-        let g = imageData.data[1]
-        let b = imageData.data[2]
-        let a = imageData.data[3]
-        mosaicCtx.fillStyle = "rgb(" + String(r) + "," + String(g) + "," + String(b) + ")"
-        mosaicCtx.fillRect(x,y,this.intensity,this.intensity)
+    if (this.intensity > 1){
+      for (let x=0; x<size; x+=this.intensity){
+        for (let y=0; y<size; y+=this.intensity){
+          let imageData = ctx.getImageData(x,y,1,1)
+          let r = imageData.data[0]
+          let g = imageData.data[1]
+          let b = imageData.data[2]
+          let a = imageData.data[3]
+          mosaicCtx.fillStyle = "rgba(" + String(r) + "," + String(g) + "," + String(b) + "," + String(a) + ")"
+          mosaicCtx.fillRect(x,y,this.intensity,this.intensity)
+        }
+      }
+    }
+    else{
+      if (imgWidth > imgHeight){
+        mosaicCtx.drawImage(img, (imgWidth-imgHeight)/2,0, imgHeight, imgHeight, 0, 0, size, size)
+      }
+  
+      else {
+        mosaicCtx.drawImage(img, 0, (imgHeight-imgWidth)/2, imgWidth, imgWidth, 0, 0, size, size)
       }
     }
     this.afterSrc = mosaicCanvas.toDataURL()
