@@ -1,18 +1,18 @@
 <div class="container">
   <label for="file_upload">
-    画像を選択して下さい
+    Select image
     <input id="file_upload" type="file" accept="image/*" (change)="onChangeFileInput($event)">
   </label>
-  <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
-  <button (click)="reset()" class="reset-btn">リセット</button>
-  <div class="concentration-container">
-    <p>濃さ: </p>
+  <button (click)="mozsaic()" class="mosaic-btn">Mosaic</button>
+  <button (click)="reset()" class="reset-btn">Reset</button>
+  <div class="intensity-container">
+    <p class="intensity-text">intensity (濃さ): </p>
     <input type="range" id="input-range" value="6" min="1" max="12" (change)="onChangeSlider()">
   </div>
-  <p class="alert" *ngIf="alert">画像を選んでね！</p>
+  <p class="alert" *ngIf="alert">Please select image! (画像を選んでね！)</p>
   <div class="image-container">
     <app-image-to-mosaic [src]="imgSrc" *ngIf="imgSrc"></app-image-to-mosaic>
     <mat-icon *ngIf="imgSrc && isMosaic">arrow_forward</mat-icon>
-    <app-after-image  [src]="imgSrc" [concentration]="concentration" *ngIf="isMosaic"></app-after-image>
+    <app-after-image  [src]="imgSrc" [intensity]="intensity" *ngIf="isMosaic"></app-after-image>
   </div>
 </div>
