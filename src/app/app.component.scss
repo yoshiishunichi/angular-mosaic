@@ -74,3 +74,17 @@ button:hover, label:hover{
   background-color: black;
   color:white;
 }
+
+.concentration-container{
+  p, input{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  input {
+    margin-left: 7.5px;
+    cursor: pointer;
+    outline: none;
+    height: 14px;
+    width: 160px;
+  }
+}

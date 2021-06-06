@@ -5,8 +5,8 @@
   </label>
   <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
   <button (click)="reset()" class="reset-btn">リセット</button>
-  <div>
-    <p>濃さ: {{concentration}}</p>
+  <div class="concentration-container">
+    <p>濃さ: </p>
     <input type="range" id="input-range" value="6" min="1" max="12" (change)="onChangeSlider()">
   </div>
   <p class="alert" *ngIf="alert">画像を選んでね！</p>
