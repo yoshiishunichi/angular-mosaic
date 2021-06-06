@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
     this.imgSrc = ""
     this.alert = false
     this.isMosaic = false
-    console.log(this.isMosaic)
+    let slider = document.getElementById("input-range") as HTMLInputElement
+    slider.value = "6"
   }
 }
