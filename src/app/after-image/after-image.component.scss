@@ -2,10 +2,13 @@ img{
   width: 200px;
   height: 200px;
   display: inline-block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   vertical-align: top;
 }
 
 canvas{
   vertical-align: top;
+  object-fit: contain;
+  object-position: center;
 }

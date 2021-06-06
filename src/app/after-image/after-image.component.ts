@@ -17,7 +17,6 @@ export class AfterImageComponent implements OnInit {
   constructor() { }
 
   ngOnChanges(changes:SimpleChanges){
-    console.log(changes["intensity"].currentValue)
     this.setMosaic()
   }
 
@@ -28,7 +27,6 @@ export class AfterImageComponent implements OnInit {
   setMosaic(){
     let size = 200
     let canvas = document.getElementById(`canvas`) as HTMLCanvasElement
-    console.log(canvas)
     let ctx = canvas.getContext("2d")
 
     let mosaicCanvas = document.getElementById("mosaic-canvas") as HTMLCanvasElement
@@ -36,7 +34,16 @@ export class AfterImageComponent implements OnInit {
 
     let img = new Image()
     img.src = this.src as string
-    ctx.drawImage(img, 0,0, size, size)
+    let imgWidth = img.width
+    let imgHeight = img.height
+
+    if (imgWidth > imgHeight){
+      ctx.drawImage(img, (imgWidth-imgHeight)/2,0, imgHeight, imgHeight, 0, 0, size, size)
+    }
+
+    else {
+      ctx.drawImage(img, 0, (imgHeight-imgWidth)/2, imgWidth, imgWidth, 0, 0, size, size)
+    }
 
     for (let x=0; x<size; x+=this.intensity){
       for (let y=0; y<size; y+=this.intensity){
