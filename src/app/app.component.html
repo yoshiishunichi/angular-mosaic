@@ -5,11 +5,14 @@
   </label>
   <button (click)="mozsaic()" class="mosaic-btn">モザイク!</button>
   <button (click)="reset()" class="reset-btn">リセット</button>
-  <input type="range" id="input-range" value="100" min="0" max="200" (change)="onChangeSlider()">
+  <div>
+    <p>濃さ: {{concentration}}</p>
+    <input type="range" id="input-range" value="6" min="1" max="12" (change)="onChangeSlider()">
+  </div>
   <p class="alert" *ngIf="alert">画像を選んでね！</p>
   <div class="image-container">
     <app-image-to-mosaic [src]="imgSrc" *ngIf="imgSrc"></app-image-to-mosaic>
     <mat-icon *ngIf="imgSrc && isMosaic">arrow_forward</mat-icon>
-    <app-after-image  [src]="imgSrc" *ngIf="isMosaic"></app-after-image>
+    <app-after-image  [src]="imgSrc" [concentration]="concentration" *ngIf="isMosaic"></app-after-image>
   </div>
 </div>

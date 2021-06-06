@@ -1,23 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-mosaic';
 
   file: File = null
   imgSrc: string | ArrayBuffer = "";
 
+  concentration = 0
+  divisors = [1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 200]
   alert = false
   isMosaic = false
   constructor(){}
   
+  ngOnInit(){
+    let slider = document.getElementById("input-range") as HTMLInputElement
+    this.concentration = this.divisors[Number(slider.value) - 1]
+  }
+
   onChangeSlider(){
     let slider = document.getElementById("input-range") as HTMLInputElement
-    console.log(slider.value)
+    this.concentration = this.divisors[Number(slider.value) - 1]
   }
 
   onChangeFileInput(event: any){
