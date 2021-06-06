@@ -51,7 +51,6 @@ export class AppComponent implements OnInit {
       this.alert = true
       this.isMosaic = false
     }
-    console.log(this.isMosaic)
   }
   reset(){
     this.imgSrc = ""
