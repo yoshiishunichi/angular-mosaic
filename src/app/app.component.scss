@@ -77,8 +77,8 @@ button:hover, label:hover{
 
 @media screen and (max-width:600px) {
   .mat-icon{
-    width: 100px;
-    line-height: 100px;
+    width: 180px;
+    line-height: 180px;
     width: 36px;
     font-size: 27px;
   }
@@ -93,5 +93,13 @@ button:hover, label:hover{
   
   .reset-btn{
     width: 72px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .mat-icon{
+    width: 132px;
+    line-height: 132px;
+    width: 33px;
   }
 }
