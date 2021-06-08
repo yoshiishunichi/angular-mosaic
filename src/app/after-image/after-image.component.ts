@@ -48,7 +48,9 @@ export class AfterImageComponent implements OnInit {
     if (this.intensity > 1){
       for (let x=0; x<size; x+=this.intensity){
         for (let y=0; y<size; y+=this.intensity){
-          let imageData = ctx.getImageData(x,y,1,1)
+          let centerX = Math.floor(x + this.intensity / 2)
+          let centerY = Math.floor(y + this.intensity / 2)
+          let imageData = ctx.getImageData(centerX, centerY,1,1)
           let r = imageData.data[0]
           let g = imageData.data[1]
           let b = imageData.data[2]
