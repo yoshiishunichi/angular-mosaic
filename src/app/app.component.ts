@@ -58,5 +58,6 @@ export class AppComponent implements OnInit {
     this.isMosaic = false
     let slider = document.getElementById("input-range") as HTMLInputElement
     slider.value = "6"
+    this.intensity = 6
   }
 }
